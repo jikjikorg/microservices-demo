@@ -33,5 +33,5 @@ steps:
 - name: say hello
   image: alpine:latest # Use a simple, common Docker image
   commands:
-  - echo "Hello from Drone!"
+  - echo "Hello from Drsone!"
   - echo "This step is running inside a Docker container."
