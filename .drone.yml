@@ -12,9 +12,9 @@ steps:
       - ${DRONE_COMMIT_SHA:0:7} # Tag with the short commit hash (optional)
     # If your registry requires authentication (most do):
     username:
-      from_secret: docker_username
+      from_secret: registry_modarre_si_username
     password:
-      from_secret: docker_password
+      from_secret: registry_modarre_si_password
     # Optional: Specify registry if not Docker Hub
     registry: registry.modarre.si
     # Optional: Specify Dockerfile location if not ./Dockerfile
