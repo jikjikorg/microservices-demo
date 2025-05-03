@@ -17,7 +17,7 @@ FROM mcr.microsoft.com/dotnet/sdk:9.0.101-noble@sha256:1f13e67d295e02abdfd187c34
 ARG TARGETARCH
 WORKDIR /app
 COPY cartservice.csproj .
-RUN dotnet restore cartservice.csproj \
+RUN dotnet restore cartservice.csproj 
     # -a $TARGETARCH
 COPY . .
 RUN dotnet publish cartservice.csproj \
