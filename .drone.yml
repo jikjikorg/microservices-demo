@@ -24,3 +24,14 @@ steps:
     # Optional: Add build arguments
     # build_args:
     #  - MY_ARG=some_value
+---
+kind: pipeline
+type: docker # Specifies that this pipeline should run on a Docker runner
+name: simple-build
+
+steps:
+- name: say hello
+  image: alpine:latest # Use a simple, common Docker image
+  commands:
+  - echo "Hello from Drone!"
+  - echo "This step is running inside a Docker container."
