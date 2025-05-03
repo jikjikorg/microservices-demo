@@ -21,6 +21,5 @@ steps:
     dockerfile: src/cartservice/src/Dockerfile
     # Optional: Specify build context if not .
     context: src/cartservice/src
-    # Optional: Add build arguments
-    # build_args:
-    #  - MY_ARG=some_value
+    buildkit: true # Explicitly enable buildkit (usually default)
+    platforms: linux/amd64 # Explicitly specify the target platform
