@@ -23,3 +23,5 @@ steps:
     context: src/cartservice/src
     buildkit: true # Explicitly enable buildkit (usually default)
     platforms: linux/amd64 # Explicitly specify the target platform
+    buildkit_debug: true # Enable verbose BuildKit logging
+    no_cache: true       # Temporarily disable build cache
