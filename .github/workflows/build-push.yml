@@ -26,6 +26,6 @@ jobs:
         with:
           push: true
           tags: modiam/currency-service:${{ github.ref_name }}
-          context: src/currency-service
+          context: ./src/currency-service
           file: ./src/currency-service/Dockerfile
-          platforms: ./linux/amd64,linux/arm64
+          platforms: linux/amd64,linux/arm64
