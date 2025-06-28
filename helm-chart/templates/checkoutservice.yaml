@@ -42,6 +42,7 @@ spec:
     metadata:
       labels:
         app: {{ .Values.checkoutService.name }}
+        app.kubernetes.io/name: {{ .Values.checkoutService.name }}
     spec:
       {{- if .Values.serviceAccounts.create }}
       serviceAccountName: {{ .Values.checkoutService.name }}
@@ -60,7 +61,7 @@ spec:
         {{- end }}
       {{- end }}
       containers:
-      - name: server
+      - name: {{ .Values.checkoutService.name }}
         securityContext:
           allowPrivilegeEscalation: false
           capabilities:

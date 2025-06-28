@@ -42,6 +42,7 @@ spec:
     metadata:
       labels:
         app: {{ .Values.adService.name }}
+        app.kubernetes.io/name: {{ .Values.adService.name }}
     spec:
       {{- if .Values.serviceAccounts.create }}
       serviceAccountName: {{ .Values.adService.name }}
@@ -61,7 +62,7 @@ spec:
         {{- end }}
       {{- end }}
       containers:
-      - name: server
+      - name: {{ .Values.adService.name }}
         securityContext:
           allowPrivilegeEscalation: false
           capabilities:

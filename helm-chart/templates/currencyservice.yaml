@@ -42,6 +42,7 @@ spec:
     metadata:
       labels:
         app: {{ .Values.currencyService.name }}
+        app.kubernetes.io/name: {{ .Values.currencyService.name }}
     spec:
       {{- if .Values.serviceAccounts.create }}
       serviceAccountName: {{ .Values.currencyService.name }}
@@ -61,7 +62,7 @@ spec:
         {{- end }}
       {{- end }}
       containers:
-      - name: server
+      - name: {{ .Values.currencyService.name }}
         securityContext:
           allowPrivilegeEscalation: false
           capabilities:

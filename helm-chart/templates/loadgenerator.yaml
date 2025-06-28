@@ -43,6 +43,7 @@ spec:
     metadata:
       labels:
         app: {{ .Values.loadGenerator.name }}
+        app.kubernetes.io/name: {{ .Values.loadGenerator.name }}
       annotations:
         sidecar.istio.io/rewriteAppHTTPProbers: "true"
     spec:
@@ -98,7 +99,7 @@ spec:
           value: "{{ .Values.frontend.name }}:80"
       {{- end }}
       containers:
-      - name: main
+      - name: {{ .Values.loadGenerator.name }}
         securityContext:
           allowPrivilegeEscalation: false
           capabilities:

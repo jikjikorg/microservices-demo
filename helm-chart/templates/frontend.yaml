@@ -42,6 +42,7 @@ spec:
     metadata:
       labels:
         app: {{ .Values.frontend.name }}
+        app.kubernetes.io/name: {{ .Values.frontend.name }}
       annotations:
         sidecar.istio.io/rewriteAppHTTPProbers: "true"
     spec:
@@ -62,7 +63,7 @@ spec:
         {{- end }}
       {{- end }}
       containers:
-        - name: server
+        - name: {{ .Values.frontend.name }}
           securityContext:
             allowPrivilegeEscalation: false
             capabilities:
