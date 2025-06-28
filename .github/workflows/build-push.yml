@@ -25,6 +25,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: modiam/currency-service:${{ github.ref_name }}
+          tags: modiam/currencyservice:${{ github.ref_name }}
           context: "{{defaultContext}}:src/currencyservice"
           platforms: linux/amd64,linux/arm64
